@@ -1,0 +1,13 @@
+/*****************************************************************************/
+/****************** Auto Generate Script, Do Not Modify! *********************/
+/*****************************************************************************/
+using UnityEngine;
+using System.Collections.Generic;
+using ClientDataBase;
+//using MobaGame.FixedMath;
+
+[System.Serializable]
+public sealed partial class $ClassName : TableClassBase
+{
+$MemberFields
+}

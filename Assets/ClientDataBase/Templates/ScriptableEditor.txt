@@ -1,0 +1,21 @@
+/*****************************************************************************/
+/****************** Auto Generate Script, Do Not Modify! *********************/
+/*****************************************************************************/
+using UnityEditor;
+using UnityEngine;
+
+[CustomEditor(typeof($ScriptableName))]
+public class $ScriptableEditorName : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        $ScriptableName script = ($ScriptableName)target;
+
+        if (GUILayout.Button("Update"))
+			script.LoadGameTable(true);
+
+        GUILayout.Space(20);
+
+        DrawDefaultInspector();
+    }
+}

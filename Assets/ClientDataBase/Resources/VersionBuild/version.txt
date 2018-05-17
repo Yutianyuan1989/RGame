@@ -1,0 +1,1 @@
+{"AppMarket":0,"AppType":0,"AppVersion":0,"AssetsVersion":0,"AssetsListPath":"","AppBuildNum":0,"NoticeUrl":"http://cdn.mgame.bananadog.cn/update/android/Major_v0/Notice.txt","AppUrl":"http://cdn.mgame.bananadog.cn/version/android/LatestVersion.apk"}

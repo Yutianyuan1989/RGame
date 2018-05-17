@@ -1,0 +1,12 @@
+%% =====================================================
+%% <$TableName> 数据定义文件,请勿编辑
+%% =====================================================
+
+-ifndef($UpperCaseTableName_HRL_FILE).
+-define($UpperCaseTableName_HRL_FILE,$LowerCaseTableName_hrl_file).
+
+-record(cfg_$LowerCaseTableName, {
+$MemberFields
+	}).
+
+-endif.

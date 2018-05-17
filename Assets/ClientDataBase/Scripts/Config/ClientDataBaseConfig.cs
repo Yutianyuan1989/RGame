@@ -1,0 +1,158 @@
+﻿/**********************************************************
+// Author   : K.(k79k06k02k)
+// FileName : ClientDataBaseConfig.cs
+**********************************************************/
+namespace ClientDataBase
+{
+    public class ClientDataBaseConfig : UnityEngine.ScriptableObject
+    {
+        /// <summary>
+        /// GameTable 識別字串，判斷方式是與資料一開始的字串做比對
+        /// </summary>
+        public string m_gameTableCheck = "";
+
+
+        public string m_root = "Assets/ClientDataBase/";
+
+        /// <summary>
+        /// Script Templates 存放路徑
+        /// </summary>
+        public string m_pathScriptTemplates = "Templates/";
+
+        /// <summary>
+        /// 資料表(txt) 存放路徑
+        /// </summary>
+        public string m_pathGameTable = "Assets/Csv/";
+
+        /// <summary>
+        /// 資料類別 存放路徑
+        /// </summary>
+        public string m_pathTableClass = "Generate/TableClass/";
+
+        /// <summary>
+        /// Scriptable Asset 存放路徑
+        /// </summary>
+        public string m_pathScriptableAsset = "Assets/Resources/Generate/ClientDataBase/";
+
+        /// <summary>
+        /// Scriptable Script 存放路徑
+        /// </summary>
+        public string m_pathScriptableScripts = "Generate/Scriptable/Script/";
+
+        /// <summary>
+        /// Scriptable Editor Script 存放路徑
+        /// </summary>
+        public string m_pathScriptableEditor = "Generate/Scriptable/Editor/";
+
+
+        /// <summary>
+        /// 類別名稱 前綴
+        /// EX: Table[FileName]
+        /// </summary>
+        public string m_nameClassPrefix = "Table";
+
+        /// <summary>
+        /// Scriptable Asset 後綴
+        /// EX: Table[FileName]Asset
+        /// </summary>
+        public string m_nameScriptableAssetSuffix = "Asset";
+
+        /// <summary>
+        /// Scriptable Script 後綴
+        /// EX: Table[FileName]Scriptable
+        /// </summary>
+        public string m_nameScriptableScriptSuffix = "Scriptable";
+
+        /// <summary>
+        /// Scriptable Editor 後綴
+        /// EX: Table[FileName]ScriptableEditor
+        /// </summary>
+        public string m_nameScriptableEditorSuffix = "ScriptableEditor";
+
+
+        /// <summary>
+        /// 附檔名 .csv
+        /// </summary>
+        [System.NonSerialized]
+        public string m_extensionCsv = ".csv";
+
+
+        /// <summary>
+        /// 模板的后缀 .txt
+        /// </summary>
+        [System.NonSerialized]
+        public string m_templateExtensionTxt = ".txt";
+
+
+
+        /// <summary>
+        /// 附檔名 .cs
+        /// </summary>
+        [System.NonSerialized]
+        public string m_extensionCs = ".cs";
+
+        /// <summary>
+        /// 附檔名 .asset
+        /// </summary>
+        [System.NonSerialized]
+        public string m_extensionAsset = ".asset";
+
+
+        public string GetTemplatePathName(string name)
+        {
+            return m_root + m_pathScriptTemplates + name + m_templateExtensionTxt;
+        }
+
+        public string GetGameTablePathName(string name)
+        {
+            return m_pathGameTable + name + m_extensionCsv;
+        }
+
+        public string GetGameTablePath()
+        {
+            return m_pathGameTable;
+        }
+
+        public string GetTableClassPath()
+        {
+            return m_root + m_pathTableClass;
+        }
+
+        public string GetScriptableAssetPath()
+        {
+            return m_pathScriptableAsset;
+        }
+
+        public string GetScriptableScriptsPath()
+        {
+            return m_root + m_pathScriptableScripts;
+        }
+
+        public string GetScriptableEditorPath()
+        {
+            return m_root + m_pathScriptableEditor;
+        }
+
+
+
+        public string GetTableClassScriptName(string fileName, bool boolExtension = false)
+        {
+            return m_nameClassPrefix + fileName + (boolExtension ? m_extensionCs : "");
+        }
+
+        public string GetScriptableScriptName(string fileName, bool boolExtension = false)
+        {
+            return m_nameClassPrefix + fileName + m_nameScriptableScriptSuffix + (boolExtension ? m_extensionCs : "");
+        }
+
+        public string GetScriptableScriptEditorName(string fileName, bool boolExtension = false)
+        {
+            return m_nameClassPrefix + fileName + m_nameScriptableEditorSuffix + (boolExtension ? m_extensionCs : "");
+        }
+
+        public string GetScriptableAssetName(string fileName, bool boolExtension = false)
+        {
+            return m_nameClassPrefix + fileName + m_nameScriptableAssetSuffix + (boolExtension ? m_extensionAsset : "");
+        }
+    }
+}

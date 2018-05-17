@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Table name="CharacterBattleUI">
+    <Field name="SkillID1">
+      <ValidateNode name="NoEmpty" Parameter="" />
+    </Field>
+
+    <Field name="SkillID2">
+      <ValidateNode name="NoEmpty" Parameter="" />
+    </Field>
+
+    <Field name="SkillID3">
+      <ValidateNode name="NoEmpty" Parameter="" />
+    </Field>
+  </Table>
+
+  <Table name="SkillBuff">
+    <Field name="BuffIcon">
+      <ValidateNode name="SpriteExist" Parameter="" />
+    </Field>
+    <Field name="BuffScript">
+      <ValidateNode name="ClassExist" Parameter="" />
+    </Field>
+  </Table>
+
+  <Table name="Skill">
+    <Field name="WeaponScript">
+      <ValidateNode name="ClassExist" Parameter="MobaGame.Skill.SkillScript" />
+    </Field>
+    <Field name="TriSkillCMT">
+      <ValidateNode name="Filter" Parameter="NoEqual|0" >
+      	<ValidateNode name="FieldDependent" Parameter="CMTControl:ID" />
+      </ValidateNode>
+    </Field>
+  </Table>  
+  
+    <Table name="CMTControl">
+    <Field name="CMT">
+      <ValidateNode name="FileExist" Parameter="Assets/Resources/" />
+    </Field>
+  </Table>  
+ <!-- <Table name="Character">
+	<Field name="ID">
+	<ValidateNode name="DirectoryExist" Parameter="Assets\Resources" />
+      <ValidateNode name="FileExist" Parameter="" />
+	  <ValidateNode name="NoEmpty" Parameter="" />
+	  <ValidateNode name="Range" Parameter="1,100" />
+	  <ValidateNode name="FieldDependent" Parameter="CharacterDescription:ID" />
+	  <ValidateNode name="Equal" Parameter="0" />
+	  <ValidateNode name="NoEqual" Parameter="0" />
+    </Field>
+  </Table>
+  -->
+  <!--
+通过Assets\ClientDataBase\CheckConfig.xml配置验证的方式，目前支持以下几种
+目录存在验证:  name=” DirectoryExist”,   Parameter=”相对Assets的目录” 可以为空
+文件存在验证: name=” FileExist”,   Parameter=”相对Assets的目录” 可以为空
+不为空的验证: name=” NoEmpty”,   Parameter忽略
+UI图标验证:SpriteExist
+相等性验证: name=”Equal”,   Parameter要相等的值。 这里注意，不同类型填空时值是不一样的，如果整数为空，其实是0
+不等性验证: name=”NoEqual”,   Parameter不相等的值。 这里注意，不同类型填空时值是不一样的，如果整数为空，其实是0
+范围验证:name=” Range”, Parameter (期望的参数为2个，以,进行分格，并可以转化为浮点数)
+表格字段的依赖: name=”Filter”, Parameter (期望的参数以'|'分割，前面的为真正的验证结点,后面的为验证结点的参数,参考别的验证结点注释)
+使用lua来进行验证: name=” Lua”, Parameter 为lua表达式。该字段的值，可以在lua代码用fieldVal来获得。 
+表格字段的依赖: name=” FieldDependent”, Parameter (期望的参数为2个，以:进行分格，第一个为表名， 第二个为字段名)
+脚本是否存在：ClassExist， Parameter：包名
+如果程序觉得上面的例子还是没有办法满足需求的话，可以TableCheckCustomStrategy里注册自定义验证。验证类继承于ITableCheckStrategyBase
+-->
+
+</Config>

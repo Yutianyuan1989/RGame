@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5c24b43a199654aa132f2da4e5ac8a, type: 3}
+  m_Name: Client DataBase Config
+  m_EditorClassIdentifier: 
+  m_gameTableCheck: 
+  m_root: Assets/ClientDataBase/
+  m_pathScriptTemplates: Templates/
+  m_pathGameTable: Assets/Csv/
+  m_pathTableClass: Generate/TableClass/
+  m_pathScriptableAsset: Assets/Resources/Generate/ClientDataBase/
+  m_pathScriptableScripts: Generate/Scriptable/Script/
+  m_pathScriptableEditor: Generate/Scriptable/Editor/
+  m_nameClassPrefix: Table
+  m_nameScriptableAssetSuffix: Asset
+  m_nameScriptableScriptSuffix: Scriptable
+  m_nameScriptableEditorSuffix: ScriptableEditor
